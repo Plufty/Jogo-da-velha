@@ -1,0 +1,90 @@
+:root /*Paleta de cores*/ 
+{
+  --lightGreen: rgb(142, 214, 26);
+  --darkBlue: #0b141e;
+  --blue: #399af5;  
+  --lightBlue: #4989c5;
+  --white: #eff1f5;
+  --grey: #171e27;
+}
+
+body /*Estilizando o tabuleiro*/
+{
+    background-color: var(--grey);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.jogo /*estilizando o tabuleiro*/
+{
+    width: 100vw;
+    height: 100vw;
+    margin: 0 auto;
+    background-color: var(--darkBlue);
+    color: #fff;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr); /*Fazendo o tabuleiro 3x3*/
+}
+  
+.jogo>div /*estilizando a divisão do tabuleiro*/
+{
+    border: 6px solid var(--lightBlue);
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.btn /*Estilizando botões restart*/
+{
+    border: 5px solid var(--blue);
+    background-color: var(--darkBlue);
+    color: white;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+.btn:hover/*pequeno zoom no botão ao passar o mouse em cima*/
+{    
+    transform: scale(1.1);
+    transition: all 0.2s; 
+}
+
+.jogo > div.winner /*Colorindo os quadros ao fazer uma sequência que gera a vitória*/
+{
+    background: var(--lightGreen);
+}
+  
+.jogo > div.winner > span 
+{
+    color: blue;
+}
+
+@media (min-width: 600px) /*Estilizando para celulares*/
+{
+    .jogo 
+    {
+        width: 600px;
+        height: 600px;
+        border-radius: 10px;
+        border: 6px solid #2c3e50;
+    }
+
+    .jogo>div 
+    {
+        border-radius: 2px;
+    }
+}
+
+@media (min-width: 1024px) /*Estilizzando para PC*/
+{
+    .btn 
+    {
+        cursor: pointer;
+    }
+}
